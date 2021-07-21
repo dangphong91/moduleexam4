@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<center>
+<h1>Delete city</h1>
+<h2>Are you sure?</h2>
+<a href="/"><button>City list</button></a>
+<form th:action="@{/delete-city}" th:object="${city}" method="post">
+    <input th:type="hidden" name="idCity" th:field="*{idCity}">
+    <table>
+        <tr>
+            <td>Bạn có chắc chắn muốn xóa thành phố: <span th:text="${city.nameCity}"></span>?</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Delete city"></td>
+        </tr>
+    </table>
+</form>
+</center>
+</body>
+</html>
